@@ -19,8 +19,9 @@
 </head>
 <body>
 
+<!-- principala -->
 <div class="header">
-	<h2>Home Page</h2>
+	<h2>Home for animals</h2>
 </div>
 <div class="content">
   	<!-- notification message -->
@@ -38,8 +39,55 @@
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
     	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<p> <a href="logout.php" style="color: red;">logout</a> </p>
+		<br>
+		<p><a href="logout.php" class="btn">Logout</a> </p>
+		<br>
+		<p><a href="profile.php" class="btn">My Profile</a> </p>
     <?php endif ?>
+</div>
+
+<!-- postare anunt -->
+<div class="header">
+  	<h2>Postare anunt</h2>
+</div>
+
+<div class="content">
+  	<p>Posteaza anunt</p>
+	<br>
+	<p><a href="choose.php" class="btn">Posteaza</a> </p>
+</div>
+
+<!-- animale pierdute -->
+<div class="header">
+  	<h2>Animale pierdute</h2>
+</div>
+
+<div class="content">
+  	<p>Animale pierdute</p>
+	<br>
+	<p><a href="lost.php" class="btn">Animale pierdute</a> </p>
+</div>
+
+<!-- animale gasite -->
+<div class="header">
+  	<h2>Animale gasite</h2>
+</div>
+
+<div class="content">
+  	<p>Animale gasite</p>
+	<br>
+	<p><a href="found.php" class="btn">Animale gasite</a> </p>
+</div>
+
+<!-- animale spre adoptie -->
+<div class="header">
+  	<h2>Animale spre adoptie</h2>
+</div>
+
+<div class="content">
+  	<p>Animale spre adoptie</p>
+	<br>
+	<p><a href="adopt.php" class="btn">Animale spre adoptie</a> </p>
 </div>
 
 </body>
