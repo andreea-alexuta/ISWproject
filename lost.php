@@ -149,6 +149,27 @@ if (isset($_GET['logout'])) {
             }
             ?>
         </section>
+        <!-- Navigatie pagini -->
+        <section class="pagination">
+            <?php
+            $sql2 = "SELECT COUNT(id) AS total FROM lost";
+            $result = $con->query($sql2);
+            $row = $result->fetch_assoc();
+            $total_pages = ceil($row["total"] / $results_per_page);
+            if ($page - 1 >= 1) {
+                echo "<td><a href=" . $_SERVER['PHP_SELF'] . "?page=" . ($page - 1) . ">Previous</a></td>";
+            }
+            for ($i = 1; $i <= $total_pages; $i++) {
+                echo "<a href='lost.php?page=" . $i . "'";
+                if ($i == $page)  echo " class='curPage'";
+                echo ">" . $i . "</a> ";
+            };
+            if ($page + 1 <= $total_pages) {
+                echo "<td><a href=" . $_SERVER['PHP_SELF'] . "?page=" . ($page + 1) . ">Next</a></td>";
+            }
+            mysqli_close($con);
+            ?>
+        </section>
                 <!-- Footer -->
                 <footer>
             <div id="left-footer">
