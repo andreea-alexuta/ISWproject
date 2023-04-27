@@ -1,0 +1,171 @@
+/* Stil CSS general */
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  color: black;
+  padding: 8px 28px;
+  background: #99d1ce;
+  border-radius: 25px;
+  margin: 0;
+  font-size: 60px;
+  font-family: "Roboto Slab", serif;
+  justify-content: center;
+}
+
+p {
+  line-height: 1.5;
+}
+
+main {
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Sectiuni */
+
+section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.section-heading {
+  font-size: 32px;
+  font-family: "Roboto Condensed", sans-serif;
+  transition: all 0.4s;
+  display: inline-block;
+  padding: 4px 32px;
+}
+
+.section-heading:hover {
+  padding: 4px 48px;
+  background: #e1bbd2;
+}
+
+/* Section Source */
+
+#section-source p {
+  padding: 8px;
+  text-align: center;
+}
+
+#section-source a {
+  margin: 8px;
+  text-align: center;
+}
+
+/* Carduri animale */
+
+.card {
+  padding: 16px;
+  background: url("img/card.png");
+  background-size: cover;
+  background-position: center;
+  border: 4px solid #e1bbd2;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  font-size: large;
+}
+
+.card-image {
+  transition: transform 0.4s;
+}
+
+.card-image img {
+  border-radius: 25px;
+  transition: 0.4s;
+  opacity: 0.95;
+  object-fit: cover;
+  width: auto;
+  height: 300px;
+}
+
+.card-image:hover {
+  transform: translateY(-3px) translateX(3px);
+}
+
+.card-image img:hover {
+  border-radius: 0px;
+  opacity: 1;
+}
+
+.card .card-description {
+  padding: 0 8px;
+}
+
+/* Butoane */
+
+.btn-readmore {
+  font-size: 16px;
+  padding: 8px 24px;
+  border: 3px solid #a2bdc5;
+  transition: 0.5s;
+  display: inline-block;
+  font-weight: bold;
+  cursor: pointer;
+  background: white;
+  margin-bottom: 8px;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.btn-readmore:hover {
+  background: #99d1ce;
+  text-decoration: none;
+  padding: 8px 24px;
+  color: white;
+  border-radius: 0px;
+}
+
+.btn-report {
+  font-size: 24px;
+  padding: 8px 24px;
+  border: 3px solid #a2bdc5;
+  transition: 0.5s;
+  display: inline-block;
+  font-weight: bold;
+  cursor: pointer;
+  background: white;
+  margin-bottom: 8px;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.btn-report:hover {
+  background: #99d1ce;
+  text-decoration: none;
+  padding: 8px 24px;
+  color: white;
+  border-radius: 0px;
+}
+
+/* Erori */
+
+.error {
+  width: fit-content;
+  display: inline-block;
+  margin: 3px auto;
+  padding: 8px;
+  border: 1px solid #c41c56;
+  color: #c41c56;
+  background: #f0d3dd;
+  border-radius: 25px;
+  text-align: left;
+  margin-bottom: 16px;
+}
