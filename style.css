@@ -399,3 +399,169 @@ footer #social-media-footer ul li:hover a .fa-github {
   text-align: center;
   border-radius: 25px;
 }
+
+/* Editari pentru diferite rezolutii de ecran */
+
+@media (max-width: 900px) {
+  nav ul {
+    display: none;
+  }
+
+  #menu-icon {
+    display: flex;
+  }
+
+  #slideout-menu {
+    display: block;
+  }
+
+  #searchbox {
+    display: none;
+  }
+
+  #profile-desc {
+    width: 100%;
+    border-left: 0;
+  }
+
+}
+
+@media (max-width: 719px) {
+  main {
+    width: 100%;
+  }
+
+  section {
+    flex-direction: column;
+  }
+
+  .card,
+  .card .card-image img {
+    width: 100%;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer #left-footer {
+    flex: 1;
+    border-right: 0;
+    padding-left: 0;
+  }
+
+  footer #right-footer {
+    background: #eee;
+    color: black;
+  }
+
+  footer #right-footer a {
+    color: black;
+  }
+
+  footer #social-media-footer a .fa-github {
+    color: black;
+    transition: 0.4s;
+  }
+}
+
+@media (max-width: 720px) {
+  main {
+    width: 70%;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  #banner h3 {
+    font-size: 20px;
+  }
+
+  .card {
+    text-align: center;
+  }
+
+  .card .card-image img {
+    width: 65%;
+  }
+
+  .card-separate {
+    width: 100%;
+  }
+
+  .card-separate .card-image-separate img {
+    width: 100%;
+    height: auto;
+  }
+
+  #logo-img {
+    padding: 0;
+  }
+
+  .pagination {
+    flex-direction: row;
+  }
+
+  #sidebar {
+    width: 40%;
+  }
+
+  .btn-readmore-s {
+    font-size: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 3px solid #a2bdc5;
+    transition: 0.5s;
+    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+    background: white;
+    margin-bottom: 8px;
+    text-align: center;
+    border-radius: 25px;
+  }
+
+  .btn-readmore:hover {
+    background: #99d1ce;
+    text-decoration: none;
+    padding: 8px 24px;
+    color: white;
+    border-radius: 0px;
+  }
+
+  footer {
+    width: 105%;
+  }
+}
+
+@media (min-width: 720px) {
+  main {
+    width: 95%;
+  }
+
+  .card {
+    width: 25%;
+  }
+
+  .card .card-image img {
+    width: 100%;
+  }
+
+  .card-separate {
+    width: 50%;
+  }
+
+  .card-separate .card-image-separate img {
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    width: 85%;
+  }
+}
