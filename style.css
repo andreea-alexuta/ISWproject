@@ -308,3 +308,56 @@ nav ul {
   color: white;
 
 }
+
+/* Footer */
+
+footer {
+  background: #99d1ce;
+  padding: 8px;
+  color: black;
+  display: flex;
+}
+
+footer a {
+  color: black;
+}
+
+footer #left-footer {
+  flex: 1;
+  border-right: 1px solid #ffffff;
+  padding-left: 32px;
+}
+
+footer #left-footer ul {
+  padding: 0;
+  list-style: none;
+  line-height: 1.5;
+}
+
+footer #right-footer {
+  flex: 2;
+  padding: 8px;
+  text-align: center;
+}
+
+footer #social-media-footer a .fa-github {
+  color: white;
+  transition: 0.4s;
+}
+
+footer #social-media-footer ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+}
+
+footer #social-media-footer ul li {
+  font-size: 48px;
+  padding: 16px;
+  transition: 0.4s;
+}
+
+footer #social-media-footer ul li:hover a .fa-github {
+  color: #407b78;
+}
