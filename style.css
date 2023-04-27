@@ -645,3 +645,64 @@ textarea:focus {
   background: white;
   border-radius: 25px;
 }
+
+/* Stil formular */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 24px;
+  background: url("img/form.png");
+  margin-bottom: 8px;
+  border-radius: 25px;
+  font-size: small;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-eve;
+  flex-wrap: wrap;
+}
+
+form input[type='text'] {
+  box-shadow: inset -4px 3px 16px -4px #e1bbd2;
+}
+
+form input[type='file'] {
+  box-shadow: inset -4px 3px 16px -4px #e1bbd2;
+}
+
+label {
+  font-size: 18px;
+}
+
+input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: 8px;
+  left: -3px;
+  position: relative;
+  background-color: #ffffff;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: 8px;
+  left: -3px;
+  position: relative;
+  background-color: #99d1ce;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
