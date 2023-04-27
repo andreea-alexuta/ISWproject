@@ -603,3 +603,25 @@ footer #social-media-footer ul li:hover a .fa-github {
 .card-separate .card-description-separate {
   padding: 0 8px;
 }
+/* Paginatie */
+
+.pagination {
+  padding: 8px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pagination a {
+  border-bottom: 3px solid white;
+  display: inline-block;
+  padding: 8px 16px;
+  transition: 0.4s;
+}
+
+.pagination a:hover {
+  text-decoration: none;
+  border-bottom: 3px solid #ffcf94;
+}
