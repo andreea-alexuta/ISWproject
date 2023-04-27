@@ -192,3 +192,71 @@ section {
   font-size: 28px;
   color: black;
 }
+
+/* Bara de navigatie */
+
+nav {
+  height: 72px;
+  background: #99d1ce;
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px 0 0;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+nav a {
+  padding: 0 32px;
+  color: black;
+  transition: 0.4s;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+.active {
+  color: #e1bbd2;
+}
+
+#logo-img {
+  display: flex;
+  height: 100%;
+  background: #99d1ce;
+  padding: 0 32px;
+  align-items: center;
+  color: white;
+  transition: 0.4s;
+}
+
+#logo-img img {
+  height: 100px;
+}
+
+#logo-img:hover {
+  background: #e1bbd2;
+}
+
+#menu-icon {
+  height: 100%;
+  font-size: 28px;
+  padding: 0 4px;
+  color: #eee;
+  display: none;
+  align-items: center;
+}
