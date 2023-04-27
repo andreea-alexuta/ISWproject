@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2023 at 03:49 PM
+-- Generation Time: Apr 27, 2023 at 08:07 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `adopt` (
   `name` varchar(101) NOT NULL,
-  `species` varchar(101) NOT NULL,
+  `species` enum('Caine','Pisica') NOT NULL,
   `breed` varchar(101) NOT NULL,
-  `gen` varchar(101) NOT NULL,
+  `gen` enum('Femela','Mascul') NOT NULL,
   `description` varchar(101) NOT NULL,
   `city` varchar(101) NOT NULL,
   `image` varchar(601) NOT NULL,
@@ -44,10 +44,19 @@ CREATE TABLE `adopt` (
 --
 
 INSERT INTO `adopt` (`name`, `species`, `breed`, `gen`, `description`, `city`, `image`, `id`, `contact`) VALUES
-('Lulu', 'pisica', 'Europeana', 'Feminin', 'Pisica portocalie foarte cuminte', 'Brasov', 'Lulu.jpg', 1, '0771 340 440'),
-('Yuki', 'Caine', 'Husky Siberian', 'Masculin', 'Un caine Husky', 'Brasov', 'Yuki.jpg', 2, '0771 734 999'),
-('Vasilica', 'Pisica', 'Ragdoll', 'Feminin', 'Pisi', 'Ploiesti', 'IMG-642f1f9e850486.79203586.jpg', 16, '0777 777 777'),
-('Vasilica 2', 'Pisica', 'Ragdoll', 'Feminin', 'ggdrghd', 'sefegd', 'IMG-642fb76939d019.84808021.jpg', 18, 'fsegdsfgdxg');
+('Laila', 'Pisica', 'Mixta', 'Femela', 'Pisica foarte cuminte, dupa cum puteti vedea este si foarte fotogenica', 'Dambovita', 'IMG-64417e5e0d7250.17766740.jpg', 1000, '0771 356 924'),
+('Helios', 'Pisica', 'Europeana', 'Mascul', 'Oferim spre adoptie un pisoi foarte cuminte si bland', 'Prahova', 'IMG-64417fc2f0fb81.46532719.jpg', 1001, '0771 734 567'),
+('Hobi', 'Caine', 'Sheltie', 'Mascul', 'Un caine superb din rasa Sheltie, este vaccinat, cipat, si foarte ascultator si iubitor', 'Bucuresti', 'IMG-6441802e3d3282.88429566.jpg', 1002, '0732 456 833'),
+('Leo', 'Pisica', 'Europeana', 'Mascul', 'Dorim sa gasim o familie iubitoare pentru acest motan foarte fioros', 'Prahova', 'IMG-6441808c2412b5.52739265.jpg', 1003, '0773 756 934'),
+('Pichi', 'Caine', 'Metis pechinez', 'Mascul', 'Oferim spre adoptie un caine cuminte si jucaus', 'Brasov', 'IMG-64418383a48c94.17841290.jpg', 1004, '0722 478 324'),
+('Kira', 'Caine', 'Shih tzu', 'Femela', 'Catelusa foarte jucausa, uneori chiar prea jucausa, in cautare de o familie iubitoare', 'Brasov', 'IMG-644185e8b5c387.28930147.jpg', 1005, '0787 863 543'),
+('Hepi', 'Pisica', 'Siberiana', 'Mascul', 'Motan foarte cuminte si linistit, il ofer spre adoptie deoarece nu ma lasa sa imi fac temele', 'Buzau', 'IMG-644187a6b1d563.00885415.jpg', 1006, '0787 863 543'),
+('Casimir', 'Pisica', 'Europeana', 'Mascul', 'Motan foarte cuminte si somnoros in cautare de o familie iubitoare si somnoroasa', 'Brasov', 'IMG-644187eab60149.65712158.png', 1007, '0771 745 999'),
+('Goldie', 'Pisica', 'Europeana', 'Mascul', 'Motan blond, foarte cuminte si iubitor', 'Prahova', 'IMG-64418868587e22.52698808.jpg', 1008, '0774 333 457'),
+('Pisi', 'Pisica', 'Mixta', 'Mascul', 'Ofer spre adoptie pisoi', 'Brasov', 'IMG-644192ef4a1029.71614735.jpg', 1009, '0771 745 676'),
+('Miti', 'Pisica', 'Europeana', 'Femela', 'Pspspspsps', 'Brasov', 'IMG-6447bc0b49c340.27419106.jpg', 1010, '0771 734 411'),
+('Lulu', 'Pisica', 'Europeana', 'Femela', 'Pisica iubitoare in cautare de o familie', 'Brasov', 'IMG-6449a3b0b36978.89550174.png', 1012, '0771 734 667'),
+('Kiki', 'Caine', 'Bichon', 'Femela', 'Cautam o familie pentru o catelusa foarte cuminte', 'Bacau', 'IMG-644ab2d765afa8.63953682.jpg', 1013, '0756 786 887');
 
 -- --------------------------------------------------------
 
@@ -73,7 +82,11 @@ CREATE TABLE `found` (
 --
 
 INSERT INTO `found` (`name`, `species`, `breed`, `gen`, `description`, `city`, `date`, `image`, `id`, `contact`) VALUES
-('Unknown', 'dgdfg', 'sdggds', 'sdgdsg', 'sgdsdg', 'dsgsdg', '11-06-2023', 'IMG-642fc308cb1ec7.42088759.jpg', 1, 'sgsdgs');
+('Necunoscut', 'Pisica', 'Europeana', 'Femela', 'Am gasit aceasta pisicuta foarte cuminte si ingrijita, in zona Caminului Memo din Brasov', 'Brasov', '08-04-2023', 'IMG-644189615814a9.13799919.jpg', 1, '0745 876 267'),
+('Necunoscut', 'Pisica', 'Europeana', 'Mascul', 'Am gasit aceasta pisica in bagaj', 'Brasov', '19.04.2023', 'IMG-644189e3582566.35520897.jpg', 2, '0734 657 887'),
+('Necunoscut', 'Pisica', 'Europeana', 'Femela', 'Am gasit aceasta pisica, este foarte cuminte doar ca se uita cam urat', 'Buzau', '20.04.2023', 'IMG-64418a364e6a18.13170757.jpg', 3, '0734 655 776'),
+('Necunoscut', 'Pisica', 'Europeana', 'Mascul', 'Pisica gasita in zona Tractorul, sper sa ii putem gasi familia', 'Brasov', '20.04.2023', 'IMG-64418a9be43ab5.66414392.jpg', 4, '0776 765 889'),
+('Necunoscut', 'Pisica', 'Europeana', 'Femela', 'Am gasit aceasta pisicuta langa Caminul Memo', 'Brasov', '20.04.2023', 'IMG-644193afc49044.69069170.jpg', 5, '0771 734 411');
 
 -- --------------------------------------------------------
 
@@ -99,8 +112,11 @@ CREATE TABLE `lost` (
 --
 
 INSERT INTO `lost` (`name`, `species`, `breed`, `gen`, `description`, `city`, `date`, `image`, `id`, `contact`) VALUES
-('Vasi', 'egtfes', 'gsdg', 'sdgdsg', 'sdgds', 'rgsdgsd', '11-06-2023', 'IMG-642fc1805f82c0.83260216.jpg', 3, 'sgdg'),
-('Maricica', 'Pisica', 'dthdrgdf', 'bug', 'yigy', 'yi', 'gyigi', 'IMG-642ff9f550fec5.02270569.jpg', 4, 'gyiigi');
+('Bobita', 'Caine', 'Bichon ', 'Mascul', 'Am pierdut acest catelus foarte cuminte va rog sa ma ajutati sa il gasesc, dar daca sunteti frizer sa', 'Prahova', '20.04.2023', 'IMG-64418c7e2ec291.03165133.jpg', 500, '0774 656 765'),
+('Leona', 'Pisica', 'Maine Coon', 'Mascul', 'Am pierdut acest motan blond, daca il gasiti va rog sa ma anunati cat de repede', 'Brasov', '17.04.2023', 'IMG-64418b654619d9.30691637.jpg', 501, '0773 456 452'),
+('Hepi Junior', 'Pisica', 'Siberiana', 'Mascul', 'Ajutati-ma sa gasesc acest motanel', 'Buzau', '20.04.2023', 'IMG-64418bf9859ad4.58037997.jpg', 502, '0771 564 778'),
+('Lola', 'Pisica', 'Europeana', 'Femela', 'Am pierdut aceasta pisica in Ploiesti, zona Malu Rosu', 'Prahova', '20.04.2023', 'IMG-64418f3c45cea5.91738898.jpg', 503, '0771 734 411'),
+('Rex', 'Pisica', 'Europeana', 'Mascul', 'Motan portocaliu cu alb, pierdut langa Piata Unirii', 'Bucuresti', '26.04.2023', 'IMG-6449448ad57a21.91916430.jpg', 504, '0771 735 678');
 
 -- --------------------------------------------------------
 
@@ -123,12 +139,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `name`, `password`, `email`, `phone`, `city`, `id`) VALUES
-('andreea0611', 'Alexuta Andreea', '6c48441b0d58474e829857663a937488', 'andreea0611@yahoo.com', '0771734411', 'Brasov', 1),
+('andreea0611', 'Alexuta Andreea', 'e5cb7c411f1d9a67f68deff4a954cfbc', 'andreea0611@yahoo.com', '0771734411', 'Brasov', 1),
 ('malina09', 'Cabel Malina', '0ff68179820a88f04344b8962fed3d2b', 'cabel.malina@yahoo.com', '0787863543', 'Brasov', 2),
 ('cata23', 'Lupu Catalina', '8ca7418bc7c0ebac7b28d867bd960f5b', 'catalinalupu23@gmail.com', '0753585672', 'Brasov', 3),
-('alexandra01', 'Bordianu Alexandra', '9db3c8f773c85206e661d7538de50fe7', 'alexandradenisa.bordianu@yahoo.com', '0758722522', 'Brasov', 4),
-('test', 'Test Test', '098f6bcd4621d373cade4e832627b4f6', 'test@test.com', '0777777777', 'Test', 5),
-('marian', 'Marian', '61de80355d479505de9c731f12460625', 'marian@marian.com', '073455433', 'Marian', 8);
+('alexandra01', 'Bordianu Alexandra', '9db3c8f773c85206e661d7538de50fe7', 'alexandradenisa.bordianu@yahoo.com', '0758722522', 'Brasov', 4);
 
 --
 -- Indexes for dumped tables
@@ -166,25 +180,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `adopt`
 --
 ALTER TABLE `adopt`
-  MODIFY `id` int(101) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(101) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1014;
 
 --
 -- AUTO_INCREMENT for table `found`
 --
 ALTER TABLE `found`
-  MODIFY `id` int(101) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(101) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `lost`
 --
 ALTER TABLE `lost`
-  MODIFY `id` int(101) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(101) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=505;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
