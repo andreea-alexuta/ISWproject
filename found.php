@@ -1,81 +1,64 @@
-<?php 
-  session_start(); 
-
-  if (!isset($_SESSION['username'])) {
-  	$_SESSION['msg'] = "You must log in first";
-  	header('location: login.php');
-  }
+<?php //verificare daca utilizatorul este logat
+session_start();
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: welcome.php');
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: welcome.php");
+}
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Animale gasite</title>
-	<link rel="stylesheet" type="text/css" href="mainstyle.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- stylesheet-uri folosite -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab">
+    <link rel="stylesheet" href="style.css">
+    <title>Animale gasite</title>
 </head>
 <body>
-
-<div class="header">
-	<h2>Animale gasite</h2>
-</div>
-
-<div class="content">
-
-<!-- lista -->
-<?php
-$con=mysqli_connect('localhost', 'root', '', 'iswproject');
-// Check connection
-if (mysqli_connect_errno())
-{
-echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
-$result = mysqli_query($con,"SELECT * FROM found");
-
-echo "Lista animalelor date gasite:";
-echo "<br>";
-
-while($row = mysqli_fetch_array($result))
-{
-    echo "<table border='2'>";
-    echo "<tr>";
-    echo "<td>";?> <img src="img/found/<?php echo $row["image"]; ?>" height="150" width="200"> <?php echo "</td>";
-    echo "</tr>";
-    echo "<tr>";
-    echo "<td> Nume: " . $row['name'] . "</td>";
-    echo "</tr>";
-    echo "<tr>";
-    echo "<td> Specie: " . $row['species'] . "</td>";
-    echo "</tr>";
-    echo "<tr>";
-    echo "<td> Rasa: " . $row['breed'] . "</td>";
-    echo "</tr>";
-    echo "<tr>";
-    echo "<td> Gen: " . $row['gen'] . "</td>";
-    echo "</tr>";
-    echo "<tr>";
-    echo "<td> Descriere: " . $row['description'] . "</td>";
-    echo "</tr>";
-    echo "<tr>";
-    echo "<td> Oras: " . $row['city'] . "</td>";
-    echo "</tr>";
-	echo "<tr>";
-    echo "<td> Data la care a fost gasit: " . $row['date'] . "</td>";
-    echo "</tr>";
-    echo "<tr>";
-    echo "<td> Contact: " . $row['contact'] . "</td>";
-    echo "</tr>";
-    echo "</table>";
-    echo "<br>";
-}
-
-
-mysqli_close($con);
-?>
-<!-- lista -->
-
-    <br>
-    <p><a href="home.php" class="btn">Back Home</a> </p>
-</div>
-
+    <!-- bara navigatie -->
+    <nav>
+        <div id="logo-img">
+            <a href="index.php">
+                <img src="img/logo.png">
+            </a>
+        </div>
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li>
+                <a href="index.php">Acasa</a>
+            </li>
+            <li>
+                <a href="index.php#report">Posteaza anunt</a>
+            </li>
+            <li>
+                <a href="lost.php">Animale pierdute</a>
+            </li>
+            <li>
+                <a href="found.php">Animale gasite</a>
+            </li>
+            <li>
+                <a href="adopt.php">Animale spre adoptie</a>
+            </li>
+            <li>
+                <a href="profile.php">Profilul meu</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Sectiunea - Animale gasite -->
+        <br><br><br><br>
+        <h2 class="section-heading">Animale gasite</h2>
+    </main>
+    <script src="main.js"></script>
 </body>
 </html>
