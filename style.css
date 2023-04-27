@@ -260,3 +260,51 @@ nav ul {
   display: none;
   align-items: center;
 }
+
+/* Profil */
+
+.page-heading {
+  font-size: 32px;
+  font-family: 'Roboto Condensed', sans-serif;
+  transition: all 0.4s;
+  display: inline-block;
+  padding: 4px 32px;
+  margin-top: 120px;
+}
+
+.page-heading:hover {
+  padding: 4px 48px;
+  background: #e1bbd2;
+}
+
+/* Descriere profil */
+
+#post-container {
+  display: flex;
+}
+
+#profile-desc {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+#profile-desc .card {
+  width: 100%;
+}
+
+#profile-desc .card-image:hover {
+  box-shadow: none;
+}
+
+/* Setari profil */
+
+#sidebar {
+  background: #e1bbd2;
+  ;
+  flex: 1;
+  flex-direction: column;
+  padding: 8px 16px;
+  color: white;
+
+}
