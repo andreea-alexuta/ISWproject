@@ -12,16 +12,19 @@ if (isset($_GET['logout'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- stylesheet-uri folosite -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab">
     <link rel="stylesheet" href="style.css">
     <title>Adoptii</title>
 </head>
+
 <body>
     <!-- bara navigatie -->
     <nav>
@@ -58,7 +61,62 @@ if (isset($_GET['logout'])) {
         <!-- Sectiunea - Animale spre adoptie -->
         <br><br><br><br>
         <h2 class="section-heading">Animale date spre adoptie</h2>
+        <!-- Afisare carduri animale -->
+        <section>
+            <?php
+            // Conectare baza de date
+            $con = mysqli_connect('localhost', 'root', '', 'iswproject');
+            if (mysqli_connect_errno()) {
+                echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            }
+            // Paginatie
+            $results_per_page = 6;
+            if (isset($_GET["page"])) {
+                $page  = $_GET["page"];
+            } else {
+                $page = 1;
+            };
+            $start_from = ($page - 1) * $results_per_page;
+            // Query baza de date
+            $sql = "SELECT * FROM adopt ORDER BY id desc LIMIT $start_from, " . $results_per_page;
+            $result = mysqli_query($con, $sql);
+            while ($row = mysqli_fetch_array($result)) {
+                // Afisare date animal
+                echo '<div class="card"> 
+                <div class="card-image">';
+                echo "<a href=adoptinfo.php?id=$row[id]>"; ?>
+            <img src="img/adopt/<?php echo $row["image"]; ?>" alt="Card Image"> <?php echo "</a> </div>";
+                echo '<div class="card-description">
+                <h3>'; ?> <?php echo $row['name']; ?>
+            <?php echo '</h3>';
+                echo "<table>";
+                echo "<tr>";
+                echo "<td> Specie: " . $row['species'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Rasa: " . $row['breed'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Gen: " . $row['gen'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Descriere: " . $row['description'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Judet: " . $row['city'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Contact stapan: " . $row['contact'] . "</td>";
+                echo "</tr>";
+                echo "</table>";
+                echo "<br>";
+                echo "<a href=adoptinfo.php?id=$row[id] class=btn-readmore>Detalii</a>";
+                echo '</div> </div>';
+            }
+            ?>
+        </section>
     </main>
     <script src="main.js"></script>
 </body>
+
 </html>
