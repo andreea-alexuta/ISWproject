@@ -23,6 +23,29 @@ if (isset($_GET['logout'])) {
     <title>Profilul meu</title>
 </head>
 <body>
+    <!-- meniu navigatie -->
+    <div id="slideout-menu">
+        <ul>
+            <li>
+                <a href="index.php">Acasa</a>
+            </li>
+            <li>
+                <a href="index.php#report">Posteaza anunt</a>
+            </li>
+            <li>
+                <a href="lost.php">Animale pierdute</a>
+            </li>
+            <li>
+                <a href="found.php">Animale gasite</a>
+            </li>
+            <li>
+                <a href="adopt.php">Animale spre adoptie</a>
+            </li>
+            <li>
+                <a href="profile.php">Profilul meu</a>
+            </li>
+        </ul>
+    </div>
     <!-- bara navigatie -->
     <nav>
         <div id="logo-img">
