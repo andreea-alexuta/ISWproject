@@ -1,11 +1,7 @@
 <?php
-// Always start this first
 session_start();
-
-// Destroying the session clears the $_SESSION variable, thus "logging" the user
-// out. This also happens automatically when the browser is closed
+// Delogare utilizator
 session_destroy();
-
   	unset($_SESSION['username']);
-  	header("location: login.php");
+  	header("location: welcome.php");
 ?>
