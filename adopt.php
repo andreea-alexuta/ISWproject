@@ -18,8 +18,7 @@ if (isset($_GET['logout'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- stylesheet-uri folosite -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
-        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab">
     <link rel="stylesheet" href="style.css">
     <title>Adoptii</title>
@@ -84,6 +83,17 @@ if (isset($_GET['logout'])) {
         <!-- Sectiunea - Animale spre adoptie -->
         <br><br><br><br>
         <h2 class="section-heading">Animale date spre adoptie</h2>
+        <!-- Bara de cautare -->
+        <section>
+            <div class="search_form">
+                <form autocomplete="off" action="adoptsearch.php" method="GET" target="_self">
+                    <input type="text" name="search" value="<?php if (isset($_GET['search'])) {
+                                                                echo $_GET['search'];
+                                                            } ?>" class="form-control" placeholder="Cauta">
+                    <button type="submit" class="btn-readmore">Cauta</button>
+                </form>
+            </div>
+        </section>
         <!-- Afisare carduri animale -->
         <section>
             <?php
@@ -108,8 +118,8 @@ if (isset($_GET['logout'])) {
                 echo '<div class="card"> 
                 <div class="card-image">';
                 echo "<a href=adoptinfo.php?id=$row[id]>"; ?>
-            <img src="img/adopt/<?php echo $row["image"]; ?>" alt="Card Image"> <?php echo "</a> </div>";
-                echo '<div class="card-description">
+                <img src="img/adopt/<?php echo $row["image"]; ?>" alt="Card Image"> <?php echo "</a> </div>";
+                                                                                    echo '<div class="card-description">
                 <h3>'; ?> <?php echo $row['name']; ?>
             <?php echo '</h3>';
                 echo "<table>";
@@ -138,8 +148,8 @@ if (isset($_GET['logout'])) {
             }
             ?>
         </section>
-                <!-- Footer -->
-                <footer>
+        <!-- Footer -->
+        <footer>
             <div id="left-footer">
                 <p>
                 <ul>
@@ -183,5 +193,4 @@ if (isset($_GET['logout'])) {
     </main>
     <script src="main.js"></script>
 </body>
-
 </html>
