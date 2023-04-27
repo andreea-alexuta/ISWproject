@@ -74,16 +74,158 @@ if (isset($_GET['logout'])) {
         <a href="lost.php">
             <h2 class="section-heading">Animale pierdute recent</h2>
         </a>
+        <!-- Afisare carduri ultimele 3 animale postate -->
+        <section>
+            <?php
+            // Conectare baza de date
+            $con = mysqli_connect('localhost', 'root', '', 'iswproject');
+            if (mysqli_connect_errno()) {
+                echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            }
+            // Query baza de date
+            $result = mysqli_query($con, "SELECT * FROM lost ORDER BY id desc LIMIT 3");
+            while ($row = mysqli_fetch_array($result)) {
+                // Afisare date animal
+                echo '<div class="card">
+                <div class="card-image">';
+                echo "<a href=lostinfo.php?id=$row[id]>"; ?>
+                <img src="img/lost/<?php echo $row["image"]; ?>" alt="Card Image"> <?php echo "</a> </div>";
+                                                                                    echo '<div class="card-description">
+                <h3>'; ?> <?php echo $row['name']; ?>
+            <?php echo '</h3> </a>';
+                echo "<table>";
+                echo "<tr>";
+                echo "<td> Specie: " . $row['species'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Rasa: " . $row['breed'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Gen: " . $row['gen'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Descriere: " . $row['description'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Judet: " . $row['city'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Data la care a fost gasit: " . $row['date'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Contact stapan: " . $row['contact'] . "</td>";
+                echo "</tr>";
+                echo "</table>";
+                echo "<br>";
+                echo "<a href=lostinfo.php?id=$row[id] class=btn-readmore>Detalii</a>";
+                echo '</div> </div>';
+            }
+            mysqli_close($con);
+            ?>
         </section>
         <!-- Sectiunea 2 - Animale gasite -->
         <a href="found.php">
             <h2 class="section-heading">Animale gasite recent</h2>
         </a>
+        <!-- Afisare carduri ultimele 3 animale postate -->
+        <section>
+            <?php
+            // Conectare baza de date
+            $con = mysqli_connect('localhost', 'root', '', 'iswproject');
+            if (mysqli_connect_errno()) {
+                echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            }
+            // Query baza de date
+            $result = mysqli_query($con, "SELECT * FROM found ORDER BY id desc LIMIT 3");
+            while ($row = mysqli_fetch_array($result)) {
+                // Afisare date animal
+                echo '<div class="card">
+                <div class="card-image">';
+                echo "<a href=foundinfo.php?id=$row[id]>"; ?>
+                <img src="img/found/<?php echo $row["image"]; ?>" alt="Card Image">
+                <?php echo "</a> </div>";
+                echo '<div class="card-description">
+                <h3>'; ?> <?php echo $row['name']; ?>
+                <?php echo '</h3> </a>';
+                echo "<table>";
+                echo "<tr>";
+                echo "<td> Specie: " . $row['species'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Rasa: " . $row['breed'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Gen: " . $row['gen'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Descriere: " . $row['description'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Judet: " . $row['city'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Data la care a fost gasit: " . $row['date'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Contact stapan: " . $row['contact'] . "</td>";
+                echo "</tr>";
+                echo "</table>";
+                echo "<br>";
+                echo "<a href=foundinfo.php?id=$row[id] class=btn-readmore>Detalii</a>";
+                echo '</div> </div>';
+            }
+            mysqli_close($con);
+            ?>
         </section>
         <!-- Sectiunea 3 - Animale spre adoptie -->
         <a href="adopt.php">
             <h2 class="section-heading">Animale date spre adoptie recent</h2>
         </a>
+        <!-- Afisare carduri ultimele 3 animale postate -->
+        <section>
+            <?php
+            // Conectare baza de date
+            $con = mysqli_connect('localhost', 'root', '', 'iswproject');
+            if (mysqli_connect_errno()) {
+                echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            }
+            // Query baza de date
+            $result = mysqli_query($con, "SELECT * FROM adopt ORDER BY id desc LIMIT 3 ");
+            while ($row = mysqli_fetch_array($result)) {
+                // Afisare date animal
+                echo '<div class="card">
+                <div class="card-image">';
+                echo "<a href=adoptinfo.php?id=$row[id]>"; ?>
+                <img src="img/adopt/<?php echo $row["image"]; ?>" alt="Card Image"> <?php echo "</a> </div>";
+                echo '<div class="card-description">
+                <h3>'; ?> <?php echo $row['name']; ?> 
+                <?php echo '</h3> </a>';
+                echo "<table>";
+                echo "<tr>";
+                echo "<td> Specie: " . $row['species'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Rasa: " . $row['breed'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Gen: " . $row['gen'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Descriere: " . $row['description'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Oras: " . $row['city'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Contact stapan: " . $row['contact'] . "</td>";
+                echo "</tr>";
+                echo "</table>";
+                echo "<br>";
+                echo "<a href=adoptinfo.php?id=$row[id] class=btn-readmore>Detalii</a>";
+                echo '</div> </div>';
+            }
+            mysqli_close($con);
+            ?>
         </section>
     </main>
     <script src="main.js"></script>
