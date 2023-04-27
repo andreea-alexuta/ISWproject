@@ -115,6 +115,48 @@ if (isset($_GET['logout'])) {
             }
             ?>
         </section>
+                <!-- Footer -->
+                <footer>
+            <div id="left-footer">
+                <p>
+                <ul>
+                    <li>
+                        <a href="index.php">Acasa</a>
+                    </li>
+                    <li>
+                        <a href="index.php#report">Posteaza anunt</a>
+                    </li>
+                    <li>
+                        <a href="lost.php">Animale pierdute</a>
+                    </li>
+                    <li>
+                        <a href="found.php">Animale gasite</a>
+                    </li>
+                    <li>
+                        <a href="adopt.php">Animale spre adoptie</a>
+                    </li>
+                    <li>
+                        <a href="profile.php">Profilul meu</a>
+                    </li>
+                    <li>
+                        <a href="logout.php">Delogheaza-te</a>
+                    </li>
+                </ul>
+                </p>
+            </div>
+            <div id="right-footer">
+                <div id="social-media-footer">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/andreea-alexuta/ISWproject">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Proiect ISW</p>
+            </div>
+        </footer>
     </main>
     <script src="main.js"></script>
 </body>
