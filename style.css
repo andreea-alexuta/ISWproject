@@ -565,3 +565,41 @@ footer #social-media-footer ul li:hover a .fa-github {
     width: 85%;
   }
 }
+
+/* Carduri animale afisare separata*/
+.card-separate {
+  padding: 16px;
+  background: url("img/card.png");
+  background-size: cover;
+  background-position: center;
+  border: 4px solid #e1bbd2;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  font-size: large;
+}
+
+.card-image-separate {
+  transition: transform 0.4s;
+}
+
+.card-image-separate img {
+  border-radius: 25px;
+  transition: 0.4s;
+  opacity: 0.95;
+  object-fit: cover;
+  width: auto;
+  height: 300px;
+}
+
+.card-image-separate:hover {
+  transform: translateY(-3px) translateX(3px);
+}
+
+.card-image-separate img:hover {
+  border-radius: 0px;
+  opacity: 1;
+}
+
+.card-separate .card-description-separate {
+  padding: 0 8px;
+}
