@@ -81,6 +81,17 @@ if (isset($_GET['logout'])) {
         <!-- Sectiunea - Animale gasite -->
         <br><br><br><br>
         <h2 class="section-heading">Animale gasite</h2>
+        <!-- Bara de cautare -->
+        <section>
+            <div class="search_form">
+                <form autocomplete="off" action="foundsearch.php" method="GET" target="_self">
+                    <input type="text" name="search" value="<?php if (isset($_GET['search'])) {
+                                                                echo $_GET['search'];
+                                                            } ?>" class="form-control" placeholder="Cauta">
+                    <button type="submit" class="btn-readmore">Cauta</button>
+                </form>
+            </div>
+        </section>
         <!-- Afisare carduri animale -->                                                    
         <section>
             <?php
