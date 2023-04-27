@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2023 at 08:07 PM
+-- Generation Time: Apr 28, 2023 at 12:26 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -139,7 +139,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `name`, `password`, `email`, `phone`, `city`, `id`) VALUES
-('andreea0611', 'Alexuta Andreea', 'e5cb7c411f1d9a67f68deff4a954cfbc', 'andreea0611@yahoo.com', '0771734411', 'Brasov', 1),
+('andreea0611', 'Alexuta Andreea', '6c48441b0d58474e829857663a937488', 'andreea0611@yahoo.com', '0771734411', 'Brasov', 1),
 ('malina09', 'Cabel Malina', '0ff68179820a88f04344b8962fed3d2b', 'cabel.malina@yahoo.com', '0787863543', 'Brasov', 2),
 ('cata23', 'Lupu Catalina', '8ca7418bc7c0ebac7b28d867bd960f5b', 'catalinalupu23@gmail.com', '0753585672', 'Brasov', 3),
 ('alexandra01', 'Bordianu Alexandra', '9db3c8f773c85206e661d7538de50fe7', 'alexandradenisa.bordianu@yahoo.com', '0758722522', 'Brasov', 4);
@@ -198,7 +198,7 @@ ALTER TABLE `lost`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
