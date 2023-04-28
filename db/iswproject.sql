@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 28, 2023 at 12:26 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Gazdă: 127.0.0.1
+-- Timp de generare: apr. 28, 2023 la 10:17 AM
+-- Versiune server: 10.4.25-MariaDB
+-- Versiune PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `iswproject`
+-- Bază de date: `iswproject`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adopt`
+-- Structură tabel pentru tabel `adopt`
 --
 
 CREATE TABLE `adopt` (
@@ -40,7 +40,7 @@ CREATE TABLE `adopt` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `adopt`
+-- Eliminarea datelor din tabel `adopt`
 --
 
 INSERT INTO `adopt` (`name`, `species`, `breed`, `gen`, `description`, `city`, `image`, `id`, `contact`) VALUES
@@ -61,7 +61,7 @@ INSERT INTO `adopt` (`name`, `species`, `breed`, `gen`, `description`, `city`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `found`
+-- Structură tabel pentru tabel `found`
 --
 
 CREATE TABLE `found` (
@@ -78,7 +78,7 @@ CREATE TABLE `found` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `found`
+-- Eliminarea datelor din tabel `found`
 --
 
 INSERT INTO `found` (`name`, `species`, `breed`, `gen`, `description`, `city`, `date`, `image`, `id`, `contact`) VALUES
@@ -86,12 +86,13 @@ INSERT INTO `found` (`name`, `species`, `breed`, `gen`, `description`, `city`, `
 ('Necunoscut', 'Pisica', 'Europeana', 'Mascul', 'Am gasit aceasta pisica in bagaj', 'Brasov', '19.04.2023', 'IMG-644189e3582566.35520897.jpg', 2, '0734 657 887'),
 ('Necunoscut', 'Pisica', 'Europeana', 'Femela', 'Am gasit aceasta pisica, este foarte cuminte doar ca se uita cam urat', 'Buzau', '20.04.2023', 'IMG-64418a364e6a18.13170757.jpg', 3, '0734 655 776'),
 ('Necunoscut', 'Pisica', 'Europeana', 'Mascul', 'Pisica gasita in zona Tractorul, sper sa ii putem gasi familia', 'Brasov', '20.04.2023', 'IMG-64418a9be43ab5.66414392.jpg', 4, '0776 765 889'),
-('Necunoscut', 'Pisica', 'Europeana', 'Femela', 'Am gasit aceasta pisicuta langa Caminul Memo', 'Brasov', '20.04.2023', 'IMG-644193afc49044.69069170.jpg', 5, '0771 734 411');
+('Necunoscut', 'Pisica', 'Europeana', 'Femela', 'Am gasit aceasta pisicuta langa Caminul Memo', 'Brasov', '20.04.2023', 'IMG-644193afc49044.69069170.jpg', 5, '0771 734 411'),
+('Hobi', 'Caine', '-', 'Mascul', 'Este prietenos', 'Buzau', '27.04.2023', 'IMG-644b0547462fe3.00114992.jpg', 13, '0784938475');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lost`
+-- Structură tabel pentru tabel `lost`
 --
 
 CREATE TABLE `lost` (
@@ -108,7 +109,7 @@ CREATE TABLE `lost` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `lost`
+-- Eliminarea datelor din tabel `lost`
 --
 
 INSERT INTO `lost` (`name`, `species`, `breed`, `gen`, `description`, `city`, `date`, `image`, `id`, `contact`) VALUES
@@ -116,12 +117,15 @@ INSERT INTO `lost` (`name`, `species`, `breed`, `gen`, `description`, `city`, `d
 ('Leona', 'Pisica', 'Maine Coon', 'Mascul', 'Am pierdut acest motan blond, daca il gasiti va rog sa ma anunati cat de repede', 'Brasov', '17.04.2023', 'IMG-64418b654619d9.30691637.jpg', 501, '0773 456 452'),
 ('Hepi Junior', 'Pisica', 'Siberiana', 'Mascul', 'Ajutati-ma sa gasesc acest motanel', 'Buzau', '20.04.2023', 'IMG-64418bf9859ad4.58037997.jpg', 502, '0771 564 778'),
 ('Lola', 'Pisica', 'Europeana', 'Femela', 'Am pierdut aceasta pisica in Ploiesti, zona Malu Rosu', 'Prahova', '20.04.2023', 'IMG-64418f3c45cea5.91738898.jpg', 503, '0771 734 411'),
-('Rex', 'Pisica', 'Europeana', 'Mascul', 'Motan portocaliu cu alb, pierdut langa Piata Unirii', 'Bucuresti', '26.04.2023', 'IMG-6449448ad57a21.91916430.jpg', 504, '0771 735 678');
+('Rex', 'Pisica', 'Europeana', 'Mascul', 'Motan portocaliu cu alb, pierdut langa Piata Unirii', 'Bucuresti', '26.04.2023', 'IMG-6449448ad57a21.91916430.jpg', 504, '0771 735 678'),
+('Rocky', 'Caine', 'Golden Retriever', 'Mascul', 'Poarta o zgarda rosie si este foarte jucaus', 'Brasov', '27.04.2023', 'IMG-644b03ad350da2.82691769.jpg', 505, '0767884334'),
+('Tommy', 'Pisica', '-', 'Mascul', 'Este un motan portocaliu cu alb', 'Buzau', '03.04.2023', 'IMG-644b0407d772e3.96724869.png', 506, '0746352467'),
+('Kira', 'Caine', 'Shih Tzu', 'Femela', 'Jucausa si poarta o zgarda rosie', 'Brasov', '26.04.2023', 'IMG-644b04af8d5e29.64259108.jpg', 507, '0784635784');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structură tabel pentru tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -135,7 +139,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Eliminarea datelor din tabel `users`
 --
 
 INSERT INTO `users` (`username`, `name`, `password`, `email`, `phone`, `city`, `id`) VALUES
@@ -145,57 +149,57 @@ INSERT INTO `users` (`username`, `name`, `password`, `email`, `phone`, `city`, `
 ('alexandra01', 'Bordianu Alexandra', '9db3c8f773c85206e661d7538de50fe7', 'alexandradenisa.bordianu@yahoo.com', '0758722522', 'Brasov', 4);
 
 --
--- Indexes for dumped tables
+-- Indexuri pentru tabele eliminate
 --
 
 --
--- Indexes for table `adopt`
+-- Indexuri pentru tabele `adopt`
 --
 ALTER TABLE `adopt`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `found`
+-- Indexuri pentru tabele `found`
 --
 ALTER TABLE `found`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `lost`
+-- Indexuri pentru tabele `lost`
 --
 ALTER TABLE `lost`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indexuri pentru tabele `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pentru tabele eliminate
 --
 
 --
--- AUTO_INCREMENT for table `adopt`
+-- AUTO_INCREMENT pentru tabele `adopt`
 --
 ALTER TABLE `adopt`
   MODIFY `id` int(101) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1014;
 
 --
--- AUTO_INCREMENT for table `found`
+-- AUTO_INCREMENT pentru tabele `found`
 --
 ALTER TABLE `found`
-  MODIFY `id` int(101) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(101) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `lost`
+-- AUTO_INCREMENT pentru tabele `lost`
 --
 ALTER TABLE `lost`
-  MODIFY `id` int(101) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=505;
+  MODIFY `id` int(101) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=508;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT pentru tabele `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
