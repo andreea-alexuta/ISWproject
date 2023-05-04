@@ -23,17 +23,21 @@ if (isset($_POST['reg_user'])) {
   $uppercase = preg_match('@[A-Z]@', $password_1);
   $lowercase = preg_match('@[a-z]@', $password_1);
   $number    = preg_match('@[0-9]@', $password_1);
-  if (empty($username)) { array_push($errors, "Username is required"); }
-  else if (empty($name)) { array_push($errors, "Name is required"); }
-  else if (empty($email)) { array_push($errors, "Email is required"); } 
-  else if (empty($phone)) { array_push($errors, "Phone number is required"); }
-  else if (empty($city)) { array_push($errors, "City is required"); }
-  if (empty($password_1)) { array_push($errors, "Password is required"); }
-  else if(!$uppercase || !$lowercase || !$number || strlen($password_1) < 8) {
-    array_push($errors, "Password not complex enough");
+  $phonenumber    = preg_match('@[0-9]@', $phone);
+  if (empty($username)) { array_push($errors, "Trebuie introdus un nume de utilizator"); }
+  else if (empty($name)) { array_push($errors, "Trebuie introdus un nume și un prenume"); }
+  else if (empty($email)) { array_push($errors, "Trebuie introdus un e-mail"); } 
+  else if (empty($phone)) { array_push($errors, "Trebuie introdus un număr de telefon"); }
+  else if (empty($city)) { array_push($errors, "Trebuie introdus județul"); }
+  else if (empty($password_1)) { array_push($errors, "Trebuie introdusă parola"); }
+ else if(!$uppercase || !$lowercase || !$number || strlen($password_1) < 8) {
+    array_push($errors, "Parola trebuie să fie de minim 8 caractere și să conțină cel puțin o majusculă și o cifră");
   }
   else if ($password_1 != $password_2) {
-	array_push($errors, "The two passwords do not match");
+	array_push($errors, "Cele două parole nu se potrivesc");
+  }
+  if(!$phonenumber || strlen($phone) !=10 ) {
+    array_push($errors, "Numărul trebuie sa conțină 10 cifre");
   }
   // verifica daca utilizatorul nu exista deja
   $user_check_query = "SELECT * FROM users WHERE username='$username' LIMIT 1";
@@ -41,7 +45,7 @@ if (isset($_POST['reg_user'])) {
   $user = mysqli_fetch_assoc($result);
   if ($user) {
     if ($user['username'] === $username) {
-      array_push($errors, "Username already exists");
+      array_push($errors, "Numele de utilizator există deja");
     }
   }
   // Inregistreaza utilizatorul daca nu exista erori
@@ -62,10 +66,10 @@ if (isset($_POST['login_user'])) {
   $password = mysqli_real_escape_string($db, $_POST['password']);
   // Form validation
   if (empty($username)) {
-  	array_push($errors, "Username is required");
+  	array_push($errors, "Numele de utilizator trebuie introdus");
   }
   if (empty($password)) {
-  	array_push($errors, "Password is required");
+  	array_push($errors, "Parola trebuie introdusă");
   }
   // Logheaza utilizatorul daca nu exista erori
   if (count($errors) == 0) {
@@ -77,7 +81,7 @@ if (isset($_POST['login_user'])) {
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
   	}else {
-  		array_push($errors, "Nume de utilizator sau parola gresita");
+  		array_push($errors, "Nume de utilizator sau parolă greșită");
   	}
   }
 }
