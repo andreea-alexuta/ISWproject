@@ -12,15 +12,9 @@ if (isset($_SESSION['username'])) {
     $c_np = mysqli_real_escape_string($db, $_POST['c_np']);
     $username = $_SESSION['username'];
     // Form validation
-    $uppercase = preg_match('@[A-Z]@', $op);
-    $lowercase = preg_match('@[a-z]@', $op);
-    $number    = preg_match('@[0-9]@', $op);
     if (empty($op)) { array_push($errors, "Parola inițială trebuie introdusă"); }
     else if (empty($np)) { array_push($errors, "Parola nouă trebuie introdusă"); }
     else if (empty($c_np)) { array_push($errors, "Parola nouă trebuie introdusă din nou"); }
-    else if(!$uppercase || !$lowercase || !$number || strlen($np) < 8) {
-      array_push($errors, "Parola trebuie să fie de minim 8 caractere și să conțină cel puțin o majusculă și o cifră");
-    }
     else if ($np != $c_np ) {
       array_push($errors, "Cele două parole nu se potrivesc");
     }
