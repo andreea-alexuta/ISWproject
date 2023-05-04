@@ -89,7 +89,7 @@ if (isset($_GET['logout'])) {
                 <form autocomplete="off" action="adoptsearch.php" method="GET" target="_self">
                     <input type="text" name="search" value="<?php if (isset($_GET['search'])) {
                                                                 echo $_GET['search'];
-                                                            } ?>" class="form-control" placeholder="Cauta">
+                                                            } ?>" class="form-control" placeholder="Caută">
                     <button type="submit" class="btn-readmore">Caută</button>
                 </form>
             </div>
@@ -137,6 +137,9 @@ if (isset($_GET['logout'])) {
                 echo "</tr>";
                 echo "<tr>";
                 echo "<td> Județ: " . $row['city'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td> Adresă: " . $row['location'] . "</td>";
                 echo "</tr>";
                 echo "<tr>";
                 echo "<td> Contact stăpân: " . $row['contact'] . "</td>";

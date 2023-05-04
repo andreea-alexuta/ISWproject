@@ -21,16 +21,16 @@ if (isset($_GET['logout'])) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab">
     <link rel="stylesheet" href="style.css">
-    <title>Adoptii</title>
+    <title>Postează un anunț</title>
 </head>
 <body>
 	<!-- Formular postare anunt -->
 	<div id="banner">
-		<h3 style="background: #e1bbd2">Posteaza un animal gasit</h3>
+		<h3 style="background: #e1bbd2">Postează un animal găsit</h3>
 		<form autocomplete="off" method="post" action="foundreport.php" enctype="multipart/form-data">
 			<?php include('errors.php'); ?>
 			<div class="input-group">
-				<label>Inserati o imagine:</label>
+				<label>Adăugați o imagine:</label>
 				<input type="file" name="image" accept=".jpg, .jpeg, .png">
 			</div>
 			<br>
@@ -40,26 +40,26 @@ if (isset($_GET['logout'])) {
 			<br>
 			<div class="radio-group">
 				<label>Specie:</label>
-				<label for="Caine">
-					<input id="Caine" value="Caine" name="species" type="radio"> Caine
+				<label for="Câine">
+					<input id="Câine" value="Câine" name="species" type="radio"> Câine
 				</label>
-				<label for="Pisica">
-					<input id="Pisica" value="Pisica" name="species" type="radio"> Pisica
+				<label for="Pisică">
+					<input id="Pisică" value="Pisică" name="species" type="radio"> Pisică
 				</label>
 			</div>
 			<br>
 			<div class="radio-group">
 				<label>Gen:</label>
-				<label for="Femela">
-					<input id="Femela" value="Femela" name="gen" type="radio"> Femela
+				<label for="Femelă">
+					<input id="Femelă" value="Femelă" name="gen" type="radio"> Femelă
 				</label>
-				<label for="Pisica">
+				<label for="Mascul">
 					<input id="Mascul" value="Mascul" name="gen" type="radio"> Mascul
 				</label>
 			</div>
 			<br>
 			<div class="input-group">
-				<input type="text" placeholder="Rasa" name="breed" value="<?php echo $breed; ?>">
+				<input type="text" placeholder="Rasă" name="breed" value="<?php echo $breed; ?>">
 			</div>
 			<br>
 			<div class="input-group">
@@ -67,11 +67,15 @@ if (isset($_GET['logout'])) {
 			</div>
 			<br>
 			<div class="input-group">
-				<input type="text" placeholder="Judet" name="city" value="<?php echo $city; ?>">
+				<input type="text" placeholder="Județ" name="city" value="<?php echo $city; ?>">
 			</div>
 			<br>
 			<div class="input-group">
-				<input type="text" placeholder="Data la care a fost gasit" name="date" value="<?php echo $date; ?>">
+				<input type="text" placeholder="Adresă" name="location" value="<?php echo $location; ?>">
+			</div>
+			<br>
+			<div class="input-group">
+				<input type="text" placeholder="Data la care a fost găsit" name="date" value="<?php echo $date; ?>">
 			</div>
 			<br>
 			<div class="input-group">
@@ -79,9 +83,9 @@ if (isset($_GET['logout'])) {
 			</div>
 			<br>
 			<div class="input-group">
-				<button type="submit" class="btn-readmore" name="report_found">Posteaza anuntul</button>
+				<button type="submit" class="btn-readmore" name="report_found">Postează anunțul</button>
 			</div>
-			<a href="index.php" class="btn-readmore">Inapoi</a>
+			<a href="index.php" class="btn-readmore">Înapoi</a>
 		</form>
 	</div>
 </body>

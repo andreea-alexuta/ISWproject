@@ -123,6 +123,9 @@ if (isset($_GET['logout'])) {
             echo "<td> Județ: " . $row->city . "</td>";
             echo "</tr>";
             echo "<tr>";
+            echo "<td> Adresă: " . $row->location . "</td>";
+            echo "</tr>";
+            echo "<tr>";
             echo "<td> Contact stăpân: " . $row->contact . "</td>";
             echo "</tr>";
             echo "</table>";

@@ -104,7 +104,7 @@ if (isset($_GET['logout'])) {
             // Cautare in baza de date
             if (isset($_GET['search'])) {
                 $filtervalues = $_GET['search'];
-                $query = "SELECT * FROM adopt WHERE CONCAT(name,species,breed,gen,city,description) LIKE '%$filtervalues%'";
+                $query = "SELECT * FROM adopt WHERE CONCAT(name,species,breed,gen,city,location,description) LIKE '%$filtervalues%'";
                 $query_run = mysqli_query($con, $query);
                 if (mysqli_num_rows($query_run) > 0) {
                     foreach ($query_run as $items) {
@@ -131,6 +131,9 @@ if (isset($_GET['logout'])) {
                         echo "</tr>";
                         echo "<tr>";
                         echo "<td> Județ: " . $items['city'] . "</td>";
+                        echo "</tr>";
+                        echo "<tr>";
+                        echo "<td> Adresă: " . $items['location'] . "</td>";
                         echo "</tr>";
                         echo "<tr>";
                         echo "<td> Contact stăpân: " . $items['contact'] . "</td>";

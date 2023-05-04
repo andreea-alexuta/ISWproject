@@ -27,19 +27,19 @@ if (isset($_GET['logout'])) {
     <div id="slideout-menu">
         <ul>
             <li>
-                <a href="index.php">Acasa</a>
+                <a href="index.php">Acasă</a>
             </li>
             <li>
-                <a href="index.php#report">Posteaza anunt</a>
+                <a href="index.php#report">Postează anunț</a>
             </li>
             <li>
                 <a href="lost.php">Animale pierdute</a>
             </li>
             <li>
-                <a href="found.php">Animale gasite</a>
+                <a href="found.php">Animale găsite</a>
             </li>
             <li>
-                <a href="adopt.php">Animale spre adoptie</a>
+                <a href="adopt.php">Animale spre adopție</a>
             </li>
             <li>
                 <a href="profile.php">Profilul meu</a>
@@ -58,19 +58,19 @@ if (isset($_GET['logout'])) {
         </div>
         <ul>
             <li>
-                <a href="index.php">Acasa</a>
+                <a href="index.php">Acasă</a>
             </li>
             <li>
-                <a href="index.php#report">Posteaza anunt</a>
+                <a href="index.php#report">Postează anunț</a>
             </li>
             <li>
                 <a href="lost.php">Animale pierdute</a>
             </li>
             <li>
-                <a href="found.php">Animale gasite</a>
+                <a href="found.php">Animale găsite</a>
             </li>
             <li>
-                <a href="adopt.php">Animale spre adoptie</a>
+                <a href="adopt.php">Animale spre adopție</a>
             </li>
             <li>
                 <a href="profile.php">Profilul meu</a>
@@ -91,9 +91,9 @@ if (isset($_GET['logout'])) {
                 <form autocomplete="off" action="lostsearch.php" method="GET" target="_self">
                     <input type="text" name="search" value="<?php if (isset($_GET['search'])) {
                                                                 echo $_GET['search'];
-                                                            } ?>" class="form-control" placeholder="Cauta">
-                    <button type="submit" class="btn-readmore">Cauta</button>
-                    <a href="lost.php" class="btn-readmore">Sterge filtrul</a>
+                                                            } ?>" class="form-control" placeholder="Caută">
+                    <button type="submit" class="btn-readmore">Caută</button>
+                    <a href="lost.php" class="btn-readmore">Șterge filtrul</a>
                 </form>
             </div>
         </section>
@@ -125,7 +125,7 @@ if (isset($_GET['logout'])) {
                         echo "<td> Specie: " . $items['species'] . "</td>";
                         echo "</tr>";
                         echo "<tr>";
-                        echo "<td> Rasa: " . $items['breed'] . "</td>";
+                        echo "<td> Rasă: " . $items['breed'] . "</td>";
                         echo "</tr>";
                         echo "<tr>";
                         echo "<td> Gen: " . $items['gen'] . "</td>";
@@ -134,10 +134,13 @@ if (isset($_GET['logout'])) {
                         echo "<td> Descriere: " . $items['description'] . "</td>";
                         echo "</tr>";
                         echo "<tr>";
-                        echo "<td> Judet: " . $items['city'] . "</td>";
+                        echo "<td> Județ: " . $items['city'] . "</td>";
                         echo "</tr>";
                         echo "<tr>";
-                        echo "<td> Contact stapan: " . $items['contact'] . "</td>";
+                        echo "<td> Adresă: " . $items['location'] . "</td>";
+                        echo "</tr>";
+                        echo "<tr>";
+                        echo "<td> Contact stăpân: " . $items['contact'] . "</td>";
                         echo "</tr>";
                         echo "</table>";
                         echo "<br>";
@@ -145,7 +148,7 @@ if (isset($_GET['logout'])) {
                         echo '</div> </div>';
                     }
                 } else {
-                    echo '<p>No Record Found</p>';
+                    echo '<p>Nu au fost găsite rezultate</p>';
                 }
                 mysqli_close($con);
             }
@@ -157,25 +160,25 @@ if (isset($_GET['logout'])) {
                 <p>
                 <ul>
                     <li>
-                        <a href="index.php">Acasa</a>
+                        <a href="index.php">Acasă</a>
                     </li>
                     <li>
-                        <a href="index.php#report">Posteaza anunt</a>
+                        <a href="index.php#report">Postează anunț</a>
                     </li>
                     <li>
                         <a href="lost.php">Animale pierdute</a>
                     </li>
                     <li>
-                        <a href="found.php">Animale gasite</a>
+                        <a href="found.php">Animale găsite</a>
                     </li>
                     <li>
-                        <a href="adopt.php">Animale spre adoptie</a>
+                        <a href="adopt.php">Animale spre adopție</a>
                     </li>
                     <li>
                         <a href="profile.php">Profilul meu</a>
                     </li>
                     <li>
-                        <a href="logout.php">Delogheaza-te</a>
+                        <a href="logout.php">Deloghează-te</a>
                     </li>
                 </ul>
                 </p>

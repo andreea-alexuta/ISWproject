@@ -71,6 +71,10 @@ if (isset($_GET['logout'])) {
 			</div>
 			<br>
 			<div class="input-group">
+				<input type="text" placeholder="Adresă" name="location" value="<?php echo $location; ?>">
+			</div>
+			<br>
+			<div class="input-group">
 				<input type="text" placeholder="Date de contact" name="contact" value="<?php echo $contact; ?>">
 			</div>
 			<br>

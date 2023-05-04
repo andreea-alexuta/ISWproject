@@ -6,6 +6,7 @@ $breed = "";
 $gen = "";
 $description = "";
 $city = "";
+$location = "";
 $date = "";
 $contact = "";
 $errors = array();
@@ -15,13 +16,24 @@ $db = mysqli_connect('localhost', 'root', '', 'iswproject');
 if (isset($_POST['report_lost']) && isset($_FILES['image'])) {
   // Primire date din formular
   $name = mysqli_real_escape_string($db, $_POST['name']);
-  $species = mysqli_real_escape_string($db, $_POST['species']);
+  $species = mysqli_real_escape_string($db, $_POST['species'] ?? '');
   $breed = mysqli_real_escape_string($db, $_POST['breed']);
-  $gen = mysqli_real_escape_string($db, $_POST['gen']);
+  $gen = mysqli_real_escape_string($db, $_POST['gen'] ?? '');
   $description = mysqli_real_escape_string($db, $_POST['description']);
   $city = mysqli_real_escape_string($db, $_POST['city']);
+  $location = mysqli_real_escape_string($db, $_POST['location']);
   $date = mysqli_real_escape_string($db, $_POST['date']);
   $contact = mysqli_real_escape_string($db, $_POST['contact']);
+      // Form validation
+      if (empty($name)) { $name = "Necunoscut"; }
+      else if (empty($species)) { array_push($errors, "Trebuie marcată specia"); }
+      else if (empty($gen)) { array_push($errors, "Trebuie marcat genul"); }
+      if (empty($breed)) { $breed = "Necunoscută"; }
+      else if (empty($description)) { array_push($errors, "Introduceți informații în descriere"); }
+      else if (empty($city)) { array_push($errors, "Trebuie introdus județul"); }
+      else if (empty($location)) { array_push($errors, "Trebuie introdusă locația unde a fost pierdut"); }
+      else if (empty($date)) { array_push($errors, "Trebuie introdusă data la care a fost pierdut"); }
+      else if (empty($contact)) { array_push($errors, "Introduceți date de contact"); }
   // Incarcare imagine in baza de date
   $img_name = $_FILES['image']['name'];
   $img_size = $_FILES['image']['size'];
@@ -35,32 +47,10 @@ if (isset($_POST['report_lost']) && isset($_FILES['image'])) {
       $new_img_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
       $img_upload_path = 'img/lost/' . $new_img_name;
       move_uploaded_file($tmp_name, $img_upload_path);
-      // Form validation
-      if (empty($name)) {
-        array_push($errors, "If name is not known or chosen, leave Unknown");
-      }
-      if (empty($species)) {
-        array_push($errors, "Species is required");
-      }
-      if (empty($breed)) {
-        array_push($errors, "Breed is required");
-      }
-      if (empty($description)) {
-        array_push($errors, "Description is required");
-      }
-      if (empty($date)) {
-        array_push($errors, "Date lost is required");
-      }
-      if (empty($city)) {
-        array_push($errors, "City is required");
-      }
-      if (empty($contact)) {
-        array_push($errors, "Contact info is required");
-      }
       // Insereaza entry in baza de date
       if (count($errors) == 0) {
         $query = "INSERT INTO lost 
-        VALUES('$name', '$species', '$breed', '$gen', '$description', '$city', '$date', '$new_img_name', '', '$contact')";
+        VALUES('$name', '$species', '$breed', '$gen', '$description', '$city', '$location', '$date', '$new_img_name', '', '$contact')";
         mysqli_query($db, $query);
         header('location: lost.php');
       }
