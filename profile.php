@@ -27,19 +27,19 @@ if (isset($_GET['logout'])) {
     <div id="slideout-menu">
         <ul>
             <li>
-                <a href="index.php">Acasa</a>
+                <a href="index.php">Acasă</a>
             </li>
             <li>
-                <a href="index.php#report">Posteaza anunt</a>
+                <a href="index.php#report">Postează anunț</a>
             </li>
             <li>
                 <a href="lost.php">Animale pierdute</a>
             </li>
             <li>
-                <a href="found.php">Animale gasite</a>
+                <a href="found.php">Animale găsite</a>
             </li>
             <li>
-                <a href="adopt.php">Animale spre adoptie</a>
+                <a href="adopt.php">Animale spre adopție</a>
             </li>
             <li>
                 <a href="profile.php">Profilul meu</a>
@@ -58,19 +58,19 @@ if (isset($_GET['logout'])) {
         </div>
         <ul>
             <li>
-                <a href="index.php">Acasa</a>
+                <a href="index.php">Acasă</a>
             </li>
             <li>
-                <a href="index.php#report">Posteaza anunt</a>
+                <a href="index.php#report">Postează anunț</a>
             </li>
             <li>
                 <a href="adopt.php">Animale pierdute</a>
             </li>
             <li>
-                <a href="adopt.php">Animale gasite</a>
+                <a href="adopt.php">Animale găsite</a>
             </li>
             <li>
-                <a href="adopt.php">Animale spre adoptie</a>
+                <a href="adopt.php">Animale spre adopție</a>
             </li>
             <li>
                 <a href="profile.php">Profilul meu</a>
@@ -103,7 +103,7 @@ if (isset($_GET['logout'])) {
                     echo "<td> Nume de utilizator: " . $row['username'] . "</td>";
                     echo "</tr>";
                     echo "<tr>";
-                    echo "<td> Nume si prenume: " . $row['name'] . "</td>";
+                    echo "<td> Nume și prenume: " . $row['name'] . "</td>";
                     echo "</tr>";
                     echo "<tr>";
                     echo "<td> E-mail: " . $row['email'] . "</td>";
@@ -112,7 +112,7 @@ if (isset($_GET['logout'])) {
                     echo "<td> Telefon: " . $row['phone'] . "</td>";
                     echo "</tr>";
                     echo "<tr>";
-                    echo "<td> Judet: " . $row['city'] . "</td>";
+                    echo "<td> Județ: " . $row['city'] . "</td>";
                     echo "</tr>";
                     echo "</table>";
                 }
@@ -120,8 +120,8 @@ if (isset($_GET['logout'])) {
             </section>
             <!-- Sectiunea - Setari profil-->
             <section id="sidebar">
-                <h3>Setari</h3>
-                <a href="editpassword.php" class="btn-readmore-s">Schimba parola</a>
+                <h3>Setări</h3>
+                <a href="editpassword.php" class="btn-readmore-s">Schimbă parola</a>
                 <a href="logout.php" class="btn-readmore-s">Delogare</a>
             </section>
         </div>
@@ -131,25 +131,25 @@ if (isset($_GET['logout'])) {
                 <p>
                 <ul>
                     <li>
-                        <a href="index.php">Acasa</a>
+                        <a href="index.php">Acasă</a>
                     </li>
                     <li>
-                        <a href="index.php#report">Posteaza anunt</a>
+                        <a href="index.php#report">Postează anunț</a>
                     </li>
                     <li>
                         <a href="lost.php">Animale pierdute</a>
                     </li>
                     <li>
-                        <a href="found.php">Animale gasite</a>
+                        <a href="found.php">Animale găsite</a>
                     </li>
                     <li>
-                        <a href="adopt.php">Animale spre adoptie</a>
+                        <a href="adopt.php">Animale spre adopție</a>
                     </li>
                     <li>
                         <a href="profile.php">Profilul meu</a>
                     </li>
                     <li>
-                        <a href="logout.php">Delogheaza-te</a>
+                        <a href="logout.php">Deloghează-te</a>
                     </li>
                 </ul>
                 </p>

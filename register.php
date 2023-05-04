@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab">
     <link rel="stylesheet" href="style.css">
-    <title>Inregistrare</title>
+    <title>Înregistrare</title>
 </head>
 <body>
     <!-- Formular inregistrare cont -->
     <div id="banner">
-        <h3>Creeaza un cont</h3>
+        <h3>Creează un cont</h3>
         <form method="post" action="register.php">
             <?php include('errors.php'); ?>
             <div class="input-group">
@@ -22,7 +22,7 @@
             </div>
             <br>
             <div class="input-group">
-                <input type="text" name="name" placeholder="Nume si prenume" value="<?php echo $name; ?>">
+                <input type="text" name="name" placeholder="Nume și prenume" value="<?php echo $name; ?>">
             </div>
             <br>
             <div class="input-group">
@@ -30,15 +30,15 @@
             </div>
             <br>
             <div class="input-group">
-                <input type="text" name="phone" placeholder="Numar de telefon" value="<?php echo $phone; ?>">
+                <input type="text" name="phone" placeholder="Număr de telefon" value="<?php echo $phone; ?>">
             </div>
             <br>
             <div class="input-group">
-                <input type="text" name="city" placeholder="Judet" value="<?php echo $city; ?>">
+                <input type="text" name="city" placeholder="Județ" value="<?php echo $city; ?>">
             </div>
             <br>
             <div class="input-group">
-                <input type="password" placeholder="Parola" name="password_1">
+                <input type="password" placeholder="Parolă" name="password_1">
             </div>
             <br>
             <div class="input-group">
@@ -46,11 +46,11 @@
             </div>
             <br>
             <div class="input-group">
-                <button type="submit" class="btn-readmore" name="reg_user">Inregistrare</button>
+                <button type="submit" class="btn-readmore" name="reg_user">Înregistrare</button>
             </div>
             <br>
-            <a href="login.php" class="btn-readmore">Aveti deja un cont?</a>
-            <a href="welcome.php" class="btn-readmore">Inapoi</a>
+            <a href="login.php" class="btn-readmore">Aveți deja un cont?</a>
+            <a href="welcome.php" class="btn-readmore">Înapoi</a>
         </form>
     </div>
 </body>

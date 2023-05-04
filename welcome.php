@@ -20,10 +20,10 @@ if (isset($_SESSION['username'])) {
 <body>
     <!-- Afis principal site si butoane de intrare in cont-->
     <div id="banner">
-        <h1>Ajuta un animalut sa isi gaseasca o casa iubitoare</h1>
-        <h3>Alatura-te unei comunitati de iubitori de animale pentru a putea posta sau naviga anunturile existente</h3>
-        <a href="login.php" class="btn-readmore">Intra in cont</a>
-        <a href="register.php" class="btn-readmore">Creeaza un cont</a>
+        <h1>Ajută un animăluț să își găsească o casă iubitoare</h1>
+        <h3>Alătura-te unei comunități de iubitori de animale pentru a putea posta sau naviga anunțurile existente</h3>
+        <a href="login.php" class="btn-readmore">Intra în cont</a>
+        <a href="register.php" class="btn-readmore">Creează un cont</a>
     </div>
 </body>
 </html>

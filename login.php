@@ -14,7 +14,7 @@
 <body>
     <!-- Formular logare in cont -->
     <div id="banner">
-        <h3>Intra in cont</h3>
+        <h3>Intră în cont</h3>
         <form method="post" action="login.php">
             <?php include('errors.php'); ?>
             <div class="input-group">
@@ -22,13 +22,13 @@
             </div>
             <br>
             <div class="input-group">
-                <input type="password" name="password" placeholder="Parola">
+                <input type="password" name="password" placeholder="Parolă">
             </div>
             <br>
             <button type="submit" class="btn-readmore" name="login_user">Autentificare</button>
             <br>
             <a href="register.php" class="btn-readmore">Utilizator nou?</a>
-            <a href="welcome.php" class="btn-readmore">Inapoi</a>
+            <a href="welcome.php" class="btn-readmore">Înapoi</a>
         </form>
     </div>
 </body>
