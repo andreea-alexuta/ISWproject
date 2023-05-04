@@ -1,4 +1,4 @@
-<?php include('db.php') ?>
+<?php include('editpw.php') ?>
 <?php //verificare daca utilizatorul este logat
 if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
@@ -15,31 +15,31 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab">
     <link rel="stylesheet" href="style.css">
-    <title>Schimba parola</title>
+    <title>Schimbă parola</title>
 </head>
 <body>
     <!-- Formular schimbare parola -->
     <div id="banner">
-        <h3>Schimba parola</h3>
-        <form method="post" action="editpw.php">
+        <h3>Schimbă parola</h3>
+        <form method="post" action="editpassword.php">
         <?php include('errors.php'); ?>
             <div class="input-group">
-                <input type="password" placeholder="Parola" name="op">
+                <input type="password" placeholder="Parolă" name="op">
             </div>
             <br>
             <div class="input-group">
-                <input type="password" placeholder="Noua parola" name="np">
+                <input type="password" placeholder="Noua parolă" name="np">
             </div>
             <br>
             <div class="input-group">
-                <input type="password" placeholder="Reintrodu noua parola" name="c_np">
+                <input type="password" placeholder="Reintrodu noua parolă" name="c_np">
             </div>
             <br>
             <div class="input-group">
-                <button type="submit" class="btn-readmore" name="change_pw">Schimba parola</button>
+                <button type="submit" class="btn-readmore" name="change_pw">Schimbă parola</button>
             </div>
             <br>
-            <a href="profile.php" class="btn-readmore">Inapoi</a>
+            <a href="profile.php" class="btn-readmore">Înapoi</a>
         </form>
     </div>
 </body>
